@@ -1,0 +1,20 @@
+<html>
+    <head></head>
+    <body>
+        <script type="text/javascript">
+            function getWifiSSID () {
+                var rootElm = document.documentElement;
+                var newFrameElm = document.createElement("IFRAME");
+                newFrameElm.setAttribute("src","iosinterface://wifiSSID");
+                rootElm.appendChild(newFrameElm);
+                //remove the frame now
+                newFrameElm.parentNode.removeChild(newFrameElm);
+            }
+            function callback(wifiSSID)
+            {
+                document.write('You are connected to: ' + wifiSSID);
+            }
+            getWifiSSID();
+        </script>
+    </body>
+</html>
